@@ -9,9 +9,15 @@ with open('reviews.txt', 'r') as f:
 print('檔案讀取完了,總共有', len(data), '筆資料')
 s = 0
 new = []
+good = []
 for d in data:
 	s += len(d)
 	if len(d) < 100:
 		new.append(d)
+	if 'good' in d:
+		good.append(d)
 print('留言平均長度: ', s/len(data))
 print('一共有', len(new), '筆留言小於100')
+print('一共有', len(good), '筆留言有包含good')
+print(good[0])
+print(good[1])
